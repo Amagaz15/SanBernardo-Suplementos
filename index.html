@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Suplementos San Bernardo</title>
+  <meta name="description" content="Catálogo online de suplementos deportivos en San Bernardo. Armá tu pedido y envialo por WhatsApp.">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-logo">💪</div>
+      <div>
+        <h1>Suplementos San Bernardo</h1>
+        <p>San Bernardo · La Costa</p>
+      </div>
+    </div>
+
+    <button class="cart-button" onclick="openCart()">
+      🛒 Carrito
+      <span id="cartCount">0</span>
+    </button>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <span class="hero-badge">🚚 Envíos a toda La Costa</span>
+
+    <h2>Suplementos deportivos en San Bernardo</h2>
+
+    <p>
+      Proteínas, creatinas, colágeno y más productos para entrenamiento.
+      Armá tu pedido y envialo directo por WhatsApp.
+    </p>
+
+    <div class="hero-actions">
+      <a class="btn-primary" href="https://wa.me/5492257521555" target="_blank" rel="noopener">
+        Consultar por WhatsApp
+      </a>
+
+      <a class="btn-secondary" href="https://www.instagram.com/suplementos.sanbernardo/" target="_blank" rel="noopener">
+        Ver Instagram
+      </a>
+    </div>
+  </section>
+
+  <!-- TRUST -->
+  <section class="trust">
+    <div>✅ Productos originales</div>
+    <div>🚚 Envíos a toda La Costa</div>
+    <div>💳 Efectivo o transferencia</div>
+  </section>
+
+  <!-- FILTROS -->
+  <section class="filters">
+    <button class="filter active" onclick="filterProducts('all', this)">Todos</button>
+    <button class="filter" onclick="filterProducts('proteina', this)">Proteínas</button>
+    <button class="filter" onclick="filterProducts('creatina', this)">Creatinas</button>
+    <button class="filter" onclick="filterProducts('colageno', this)">Colágeno</button>
+    <button class="filter" onclick="filterProducts('otros', this)">Otros</button>
+  </section>
+
+  <!-- PRODUCTOS -->
+  <main class="products">
+
+    <article class="product-card" data-category="proteina">
+     <div class="product-image">
+  <img src="assets/productos/whey.protein.png" alt="Whey.Protein 2lbs - Star Nutrition">
+</div>
+      <div class="product-info">
+        <span class="product-brand">Star Nutrition</span>
+        <h3>Whey Protein 2lbs</h3>
+        <p>Frutilla · Vainilla · Cookies</p>
+        <strong>$32.900</strong>
+
+        <button onclick="addToCart('Whey Protein 2lbs', 'Star Nutrition', 32900)">
+          Agregar al carrito
+        </button>
+      </div>
+    </article>
+
+    <article class="product-card" data-category="proteina">
+      <div class="product-image">
+  <img src="assets/productos/starter.protein.png" alt="Starter Protein 400gr - ENA">
+</div>
+      <div class="product-info">
+        <span class="product-brand">ENA</span>
+        <h3>Starter Protein 400gr</h3>
+        <p>Café con leche · 20g proteína</p>
+        <strong>Consultar precio</strong>
+
+        <button onclick="addToCart('Starter Protein 400gr', 'ENA', 0)">
+          Agregar al carrito
+        </button>
+      </div>
+    </article>
+
+    <article class="product-card" data-category="creatina">
+      <div class="product-image">
+  <img src="assets/productos/creatina.monohidrato.png" alt="Creatina Monohidrato 300g - Star Nutrition">
+</div>
+      <div class="product-info">
+        <span class="product-badge">Oferta</span>
+        <span class="product-brand">Star Nutrition</span>
+        <h3>Creatina Monohidrato 300g</h3>
+        <p>Neutro · Multifrutas</p>
+        <strong>$29.900</strong>
+
+        <button onclick="addToCart('Creatina Monohidrato 300g', 'Star Nutrition', 29900)">
+          Agregar al carrito
+        </button>
+      </div>
+    </article>
+
+    <article class="product-card" data-category="creatina">
+      <div class="product-image">
+        <img src="assets/productos/ena.creatina.png" alt="Creatina Monohidrato 300gr - ENA">
+      </div>
+      <div class="product-info">
+        <span class="product-brand">ENA</span>
+        <h3>Creatina Monohidrato 300gr</h3>
+        <p>Neutro · Naranja · Fruit Punch</p>
+        <strong>Consultar precio</strong>
+
+        <button onclick="addToCart('Creatina Monohidrato 300gr', 'ENA', 0)">
+          Agregar al carrito
+        </button>
+      </div>
+    </article>
+
+    <article class="product-card" data-category="colageno">
+      <div class="product-image">
+        <img src="assets/productos/ena.colageno.jpg" alt="Colágeno Sport 413gr - ENA">
+      </div>
+      <div class="product-info">
+        <span class="product-brand">ENA</span>
+        <h3>Colágeno Sport 413gr</h3>
+        <p>Naranja · Multifrutas</p>
+        <strong>$28.900</strong>
+
+        <button onclick="addToCart('Colágeno Sport 413gr', 'ENA', 28900)">
+          Agregar al carrito
+        </button>
+      </div>
+    </article>
+
+    <article class="product-card" data-category="otros">
+      <div class="product-image">
+        <img src="assets/productos/star.caffeine.jpg" alt="Caffeine 200 - Star Nutrition">
+      </div>
+      <div class="product-info">
+        <span class="product-brand">Star Nutrition</span>
+        <h3>Caffeine 200</h3>
+        <p>30 cápsulas · 200mg cafeína</p>
+        <strong>Consultar precio</strong>
+
+        <button onclick="addToCart('Caffeine 200', 'Star Nutrition', 0)">
+          Agregar al carrito
+        </button>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <h3>Suplementos San Bernardo</h3>
+    <p>San Bernardo · La Costa</p>
+
+    <a href="https://wa.me/5492257521555" target="_blank" rel="noopener">
+  💬 WhatsApp: 2257 521555
+</a>
+      💬 WhatsApp: 2257 521555
+    </a>
+  </footer>
+
+  <!-- OVERLAY CARRITO -->
+  <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+
+  <!-- CARRITO -->
+  <aside class="cart-panel" id="cartPanel">
+    <div class="cart-header">
+      <h2>Tu pedido</h2>
+      <button onclick="closeCart()">×</button>
+    </div>
+
+    <div class="cart-items" id="cartItems">
+      <p class="empty-cart">Tu carrito está vacío.</p>
+    </div>
+
+    <div class="cart-form">
+      <label>Tu nombre</label>
+      <input type="text" id="customerName" placeholder="Ej: Diego">
+
+      <label>Dirección</label>
+      <input type="text" id="customerAddress" placeholder="Ej: Calle 123, San Bernardo">
+
+      <label>Modalidad</label>
+      <select id="deliveryType" aria-label="Modalidad de entrega">
+        <option value="Envío">Envío</option>
+        <option value="Retiro por el local">Retiro por el local</option>
+      </select>
+
+      <label>Forma de pago</label>
+      <select id="paymentMethod" aria-label="Forma de pago">
+        <option value="Efectivo">Efectivo</option>
+        <option value="Transferencia">Transferencia</option>
+      </select>
+
+      <div class="cart-total">
+        <span>Total estimado</span>
+        <strong id="cartTotal">$0</strong>
+      </div>
+
+      <button class="send-button" onclick="sendOrderToWhatsApp()">
+        Enviar pedido por WhatsApp
+      </button>
+    </div>
+  </aside>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
