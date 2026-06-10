@@ -34,7 +34,6 @@ function addToCart(name, brand, price) {
 
   saveCart();
   renderCart();
-  openCart();
 }
 
 function removeFromCart(index) {
